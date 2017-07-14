@@ -1,4 +1,4 @@
-package de.micha;
+package de.micha.api;
 
 import org.junit.Test;
 
