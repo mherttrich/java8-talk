@@ -15,7 +15,9 @@ public class ApiUser {
     public static void main(String[] args) {
 
         List<Coder> coders = api.getCoders();
-        coders.add(new Coder("sada","asda",3));
+
+
+
 
         List<Coder> untouched = api.getOriginalUntouchedVirginCoderList();
 

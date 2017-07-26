@@ -9,6 +9,10 @@ public class Coder {
     private String lastname;
     private int age;
 
+
+    public Coder() {
+    }
+
     public Coder(String firstname, String lastname, int age) {
         this.firstname = firstname;
         this.lastname = lastname;
