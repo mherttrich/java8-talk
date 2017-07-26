@@ -21,8 +21,6 @@ public class MyApp {
     private static EvilLib externalLib = new EvilLib();
 
     private static List<Coder> list;
-
-
     private static Coder leadDev;
 
     private static Set<String> coding = new HashSet<String>() {{
@@ -35,30 +33,24 @@ public class MyApp {
         add("scrum");
     }};
 
-
-
-
     static {
-
-
-        leadDev = new Coder("Brian", "Clever", several);
-
         list = new ArrayList<>();
         list.add(new Coder("Heinz", "Meier", coding));
         list.add(new Coder("Franz", "Schmidt", several));
 
+        leadDev = new Coder("Brian", "Clever", several);
     }
 
 
     public static void main(String[] args) {
 
         externalLib.printPretty(list);
-
-
         assertEquals(2, list.size());
-        externalLib.printPretty(leadDev);
         assertEquals("Coder{firstname='Heinz', lastname='Meier', skills=[java, perl]}", list.get(0).toString());
         assertEquals("Coder{firstname='Franz', lastname='Schmidt', skills=[java, scrum]}", list.get(1).toString());
+
+
+        externalLib.printPretty(leadDev);
         assertEquals("Coder{firstname='Brian', lastname='Clever', skills=[java, scrum]}", leadDev.toString());
     }
 }
