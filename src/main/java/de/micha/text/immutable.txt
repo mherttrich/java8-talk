@@ -13,3 +13,18 @@ Declare the class as final so it can’t be extended.
 Make all mutable fields final so that it’s value can be assigned only once.
 In getter methods just return a copy or an immutable
 Initialize all the fields via a constructor performing deep copy or Builder (ImmutableSet.copyOf()
+
+
+
+
+
+
+
+
+
+
+
+change list ()
+Arrays.asList
+change coder (constr arg, getter, inheritance)
+

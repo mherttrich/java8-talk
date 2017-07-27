@@ -9,16 +9,16 @@ import java.util.Set;
  */
 public final class Coder2 {
 
-    private final String firstname;
-    private final String lastname;
-    private final ImmutableSet<String> skills;
+    private String firstname;
+    private String lastname;
+    private Set<String> skills;
 
 
 
 
     private Coder2(Builder builder) {
-        this.firstname = builder.firstName;
-        this.lastname = builder.lastName;
+        this.firstname = builder.firstname;
+        this.lastname = builder.lastname;
         this.skills = ImmutableSet.copyOf(builder.skills);
     }
 
@@ -26,9 +26,12 @@ public final class Coder2 {
         return firstname;
     }
 
+
+
     public String getLastname() {
         return lastname;
     }
+
 
     public Set<String> getSkills() {
         return skills;
@@ -37,34 +40,36 @@ public final class Coder2 {
 
     @Override
     public String toString() {
-        return "Coder2{" +
+        return "Coder{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", skills=" + skills +
                 '}';
     }
 
-    public static class Builder{
+    public static class Builder {
 
-        private String firstName;
-        private String lastName;
-        private Set<String> skills;
-        public Builder() {
+        public Builder(String firstname) {
+            this.firstname = firstname;
         }
-        public Builder addFirstName(String fn){
-            this.firstName = fn;
+
+
+        public Builder addLastname(String lastname) {
+            this.lastname = lastname;
             return this;
         }
-        public Builder addLastName(String ln){
-            this.lastName = ln;
-            return this;
-        }
-        public Builder addSkills(Set<String> skills){
+
+        public Builder addSkills(Set<String> skills) {
             this.skills = skills;
             return this;
         }
         public Coder2 build(){
             return new Coder2(this);
         }
+
+        private String firstname;
+        private String lastname;
+        private Set<String> skills;
+
     }
 }
