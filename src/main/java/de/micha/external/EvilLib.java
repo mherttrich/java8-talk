@@ -13,12 +13,14 @@ public class EvilLib {
 
     public void printPretty(List<Coder> coders) {
         coders.forEach(System.out::println);
+        // someone might do something stupid
+        // coders.add(new Coder("","", null));
         System.out.println();
     }
 
     public  void printPretty(Coder coder) {
-
-        System.out.print(coder);
-        System.out.println();
+        // someone might do something stupid
+        // coder.getSkills().add("vmpro");
+        System.out.println(coder);
     }
 }

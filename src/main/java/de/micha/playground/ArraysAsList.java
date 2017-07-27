@@ -14,11 +14,10 @@ public class ArraysAsList
         List<String> list = Arrays.asList("H", "a", "l","l","o");
         //List backed by fixed size array, no add, remove
 
-        //list.add("k");
+        UnaryOperator<String> o = s -> s.replace("a", "e");
+        list.replaceAll(o);
+        //nope
         //list.remove("k");
-
-
-
 
         System.out.println(list);
     }

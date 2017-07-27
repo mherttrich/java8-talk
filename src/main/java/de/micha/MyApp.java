@@ -1,11 +1,12 @@
 package de.micha;
 
-import com.google.common.collect.Sets;
-import de.micha.external.EvilLib;
+import com.google.common.collect.ImmutableList;
 import de.micha.domain.Coder;
+import de.micha.external.EvilLib;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,17 +35,39 @@ public class MyApp {
     }};
 
     static {
-        list = new ArrayList<>();
-        list.add(new Coder("Heinz", "Meier", coding));
-        list.add(new Coder("Franz", "Schmidt", several));
 
-        leadDev = new Coder("Brian", "Clever", several);
+
+        //java.util
+        //list = Collections.unmodifiableCollection(new ArrayList<String>());
+
+        // guava
+        list = ImmutableList.of(
+                new Coder.Builder("Heinz")
+                        .addLastname("Meier")
+                        .addSkills(coding)
+                        .build(),
+
+                new Coder.Builder("Franz")
+                        .addLastname("Schmidt")
+                        .addSkills(several)
+                        .build()
+                );
+
+        leadDev = new Coder.Builder("Brian")
+                .addLastname("Clever")
+                .addSkills( several).build();
     }
 
 
     public static void main(String[] args) {
 
+
+
         externalLib.printPretty(list);
+
+        //someone might hold still a reference to what we used on construction
+        several.add("feed the cat");
+
         assertEquals(2, list.size());
         assertEquals("Coder{firstname='Heinz', lastname='Meier', skills=[java, perl]}", list.get(0).toString());
         assertEquals("Coder{firstname='Franz', lastname='Schmidt', skills=[java, scrum]}", list.get(1).toString());

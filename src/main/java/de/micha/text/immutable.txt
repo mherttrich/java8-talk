@@ -1,5 +1,6 @@
 https://github.com/google/guava/wiki/ImmutableCollectionsExplained
 
+Immutables
 Can be used as a constant, with the expectation that it will remain fixed
 significantly lowers apprearance of software bugs
 Safe for use by untrusted libraries.

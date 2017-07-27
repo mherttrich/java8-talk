@@ -6,10 +6,10 @@ import java.util.Set;
  * Created by mherttrich on 26/07/17.
  */
 public  class Person {
-    private final Set<String> hobbies;
+    private  Set<String> hobbies;
 
 
-    Person(Set<String> h) {
+     Person(Set<String> h) {
         this.hobbies = h;
     }
 
