@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class Person {
 
-    private String name= "default person";;
+    private String name= "default person";
     private Gender gender = Gender.FEMALE;
     private Integer height =0;
     private int age=0;

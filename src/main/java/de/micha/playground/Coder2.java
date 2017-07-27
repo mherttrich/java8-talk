@@ -1,4 +1,4 @@
-package de.micha.util;
+package de.micha.playground;
 
 import com.google.common.collect.ImmutableSet;
 
@@ -34,25 +34,6 @@ public final class Coder2 {
         return skills;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Coder2 coder = (Coder2) o;
-
-        if (firstname != null ? !firstname.equals(coder.firstname) : coder.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(coder.lastname) : coder.lastname != null) return false;
-        return skills != null ? skills.equals(coder.skills) : coder.skills == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = firstname != null ? firstname.hashCode() : 0;
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (skills != null ? skills.hashCode() : 0);
-        return result;
-    }
 
     @Override
     public String toString() {

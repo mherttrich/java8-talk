@@ -1,4 +1,4 @@
-package de.micha.util;
+package de.micha.playground;
 
 import com.google.common.collect.ImmutableList;
 import de.micha.domain.Coder;
@@ -15,7 +15,10 @@ public class Cheet {
 
     public static void main(String[] args) {
 
+        //nope
         ArrayList<Coder> list = new ArrayList<>();
+
+
         List<Coder> c2 = Collections.unmodifiableList(list);
 
         ImmutableList.copyOf(list);

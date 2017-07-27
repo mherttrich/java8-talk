@@ -1,0 +1,15 @@
+https://github.com/google/guava/wiki/ImmutableCollectionsExplained
+
+Can be used as a constant, with the expectation that it will remain fixed
+significantly lowers apprearance of software bugs
+Safe for use by untrusted libraries.
+Thread-safe: can be used by many threads with no risk of race conditions.
+Doesn't need to support mutation, and can make time and space savings with that assumption. All immutable collection implementations are more memory-efficient than their mutable siblings (analysis)
+
+
+Don’t provide setter methods for variables
+Make all fields private so that direct access is not allowed.
+Declare the class as final so it can’t be extended.
+Make all mutable fields final so that it’s value can be assigned only once.
+In getter methods just return a copy or an immutable
+Initialize all the fields via a constructor performing deep copy or Builder (ImmutableSet.copyOf()
