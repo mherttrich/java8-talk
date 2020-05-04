@@ -10,3 +10,5 @@ some code to have a talk about java8 features and play with
 
 some code to talk about Immutables and play with
 
+![alt text](http://url/to/berlin-map.png)
+
